@@ -160,7 +160,7 @@ Experiments with Graph Neural Networks for recommendation systems.
 <br/>
 
 <!-- Animated contribution snake — needs the GitHub Action in snake.yml (see notes) -->
-<img src="https://raw.githubusercontent.com/USERNAME/USERNAME/output/github-snake-dark.svg" alt="Contribution snake" />
+<img src="https://raw.githubusercontent.com/kztcha/kztcha/output/github-snake-dark.svg" alt="Contribution snake" />
 
 </div>
 
