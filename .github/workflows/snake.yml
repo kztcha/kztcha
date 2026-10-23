@@ -1,4 +1,11 @@
-# Save as: .github/workflows/snake.yml in your USERNAME/USERNAME profile repo
+# Save as: .github/workflows/snake.yml in your kztcha/kztcha profile repo
+#
+# Builds an animated NEON CYBERPUNK CITY from your GitHub contributions:
+# every day becomes a building (taller = more contributions), a light beam scans
+# across the skyline, windows flicker, flying cars cross the sky, and it rains.
+#
+# The output file names are unchanged (github-snake-dark.svg / github-snake.svg),
+# so the README does not need any modification.
 name: Generate Snake Animation
 
 on:
@@ -15,12 +22,250 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+      - name: Build the neon contribution city
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+        run: |
+          mkdir -p dist
+          python3 - <<'PY'
+          import os, re, json, random, datetime, urllib.request
+
+          USER = os.environ.get("GH_USER", "")
+          TOKEN = os.environ.get("GITHUB_TOKEN", "")
+          UA = {"User-Agent": "neon-city-generator"}
+          PINK, CYAN, YEL, PUR, GRN = "#ff2a6d", "#05d9e8", "#f9f002", "#b026ff", "#39ff14"
+          FONT = "'Courier New', Courier, monospace"
+
+
+          def fetch_graphql():
+              q = ("query($u:String!){user(login:$u){contributionsCollection{contributionCalendar{"
+                   "weeks{contributionDays{contributionCount weekday}}}}}}")
+              body = json.dumps({"query": q, "variables": {"u": USER}}).encode()
+              headers = dict(UA, Authorization="bearer " + TOKEN, **{"Content-Type": "application/json"})
+              req = urllib.request.Request("https://api.github.com/graphql", data=body, headers=headers)
+              data = json.load(urllib.request.urlopen(req, timeout=30))
+              weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+              out = []
+              for w in weeks:
+                  col = [None] * 7
+                  for d in w["contributionDays"]:
+                      col[d["weekday"]] = d["contributionCount"]
+                  out.append(col)
+              return out
+
+
+          def fetch_html():
+              req = urllib.request.Request("https://github.com/users/%s/contributions" % USER, headers=UA)
+              page = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
+              tips = {}
+              for m in re.finditer(r'<tool-tip[^>]*\bfor="([^"]+)"[^>]*>\s*([^<]*?)\s*</tool-tip>', page):
+                  n = re.match(r"(\d+)\s+contribution", m.group(2))
+                  tips[m.group(1)] = int(n.group(1)) if n else 0
+              days = []
+              for m in re.finditer(r"<td\b[^>]*>", page):
+                  tag = m.group(0)
+                  d = re.search(r'data-date="([^"]+)"', tag)
+                  if not d:
+                      continue
+                  i = re.search(r'\bid="([^"]+)"', tag)
+                  l = re.search(r'data-level="(\d)"', tag)
+                  level = int(l.group(1)) if l else 0
+                  cnt = tips.get(i.group(1)) if i else None
+                  if cnt is None:
+                      cnt = [0, 2, 5, 9, 14][level]
+                  days.append((d.group(1), cnt))
+              if not days:
+                  raise RuntimeError("no contribution data found in HTML")
+              days.sort()
+              weeks, cur = [], None
+              for date, cnt in days:
+                  wd = (datetime.date.fromisoformat(date).weekday() + 1) % 7  # Sunday = 0
+                  if cur is None or wd == 0:
+                      cur = [None] * 7
+                      weeks.append(cur)
+                  cur[wd] = cnt
+              return weeks
+
+
+          def get_weeks():
+              if TOKEN:
+                  try:
+                      return fetch_graphql()
+                  except Exception as e:
+                      print("GraphQL failed (%s), falling back to HTML" % e)
+              return fetch_html()
+
+
+          PALETTE = {
+              1: ("#0b6f7a", "#08525a", "#05d9e8"),
+              2: ("#3b3fbf", "#2c2f94", "#6c7bff"),
+              3: ("#7a1fb3", "#5a1685", "#b026ff"),
+              4: ("#b3174c", "#82123a", "#ff2a6d"),
+          }
+
+          CSS = """
+          .flick{animation:flick 5s infinite}
+          @keyframes flick{0%,17%,21%,60%,63%,100%{opacity:1}19%,61.5%{opacity:.25}20%{opacity:.8}}
+          .tw{animation:tw 3s ease-in-out infinite}
+          @keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
+          .rain{animation:rain 1s linear infinite}
+          @keyframes rain{from{transform:translate(0,-30px)}to{transform:translate(-14px,400px)}}
+          .win{animation:win 6s ease-in-out infinite}
+          @keyframes win{0%,100%{opacity:.95}50%{opacity:.1}}
+          .wave{opacity:0;animation:wave 9s linear infinite}
+          @keyframes wave{0%{opacity:0}2%{opacity:.9}8%{opacity:0}100%{opacity:0}}
+          .beam{opacity:0;animation:beam 9s linear infinite}
+          @keyframes beam{0%{transform:translateX(0);opacity:0}2%{opacity:1}64%{transform:translateX(SPANpx);opacity:1}67%{transform:translateX(SPANpx);opacity:0}100%{transform:translateX(SPANpx);opacity:0}}
+          .c1{animation:c1 11s linear infinite}
+          .c2{animation:c2 16s linear infinite -4s}
+          .c3{animation:c1 8s linear infinite -2s}
+          @keyframes c1{from{transform:translateX(-120px)}to{transform:translateX(1020px)}}
+          @keyframes c2{from{transform:translateX(1020px)}to{transform:translateX(-120px)}}
+          .blink{animation:blink 1s steps(1) infinite}
+          @keyframes blink{50%{opacity:0}}
+          .pulse{animation:pulse 2.5s ease-in-out infinite}
+          @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+          """
+
+
+          def level(c, mx):
+              if c <= 0:
+                  return 0
+              q = c / float(mx)
+              return 1 if q <= .25 else 2 if q <= .5 else 3 if q <= .75 else 4
+
+
+          def build(weeks):
+              rng = random.Random(7)
+              W, H = 900, 340
+              cols = len(weeks)
+              step, cw, GY = 14, 12, 296
+              span = cols * step
+              x0 = int((W - (span + 6 * 6 + 5)) / 2)
+              vals = [c for w in weeks for c in w if c is not None]
+              mx = max(vals + [1])
+              total = sum(vals)
+              best = cur = 0
+              for c in vals:
+                  cur = cur + 1 if c > 0 else 0
+                  best = max(best, cur)
+
+              p = []
+              p.append('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" role="img" '
+                       'aria-label="Neon city built from GitHub contributions">' % (W, H, W, H))
+              p.append('<defs>'
+                       '<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="a"/>'
+                       '<feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="a"/>'
+                       '<feMergeNode in="SourceGraphic"/></feMerge></filter>'
+                       '<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.4" result="a"/>'
+                       '<feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+                       '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05000d"/>'
+                       '<stop offset=".6" stop-color="#1a0638"/><stop offset="1" stop-color="#4a0a56"/></linearGradient>'
+                       '<linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f9f002"/>'
+                       '<stop offset=".55" stop-color="#ff7a3d"/><stop offset="1" stop-color="#ff2a6d"/></linearGradient>'
+                       '<linearGradient id="street" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2a6d" stop-opacity=".5"/>'
+                       '<stop offset="1" stop-color="#05d9e8" stop-opacity=".1"/></linearGradient>'
+                       '<linearGradient id="trail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff2a6d" stop-opacity="0"/>'
+                       '<stop offset="1" stop-color="#ff2a6d"/></linearGradient>'
+                       '<linearGradient id="beamg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#05d9e8" stop-opacity="0"/>'
+                       '<stop offset="1" stop-color="#05d9e8" stop-opacity=".35"/></linearGradient>'
+                       '<radialGradient id="vig" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/>'
+                       '<stop offset="1" stop-color="#000" stop-opacity=".6"/></radialGradient>'
+                       '<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".25"/></pattern>'
+                       '<style>' + CSS.replace("SPAN", str(span)) + '</style></defs>')
+              p.append('<rect width="%d" height="%d" fill="url(#sky)"/>' % (W, H))
+              for _ in range(50):
+                  p.append('<circle class="tw" style="animation-delay:-%.1fs" cx="%d" cy="%d" r="%s" fill="#fff"/>'
+                           % (rng.random() * 3, rng.randint(0, W), rng.randint(0, 150), rng.choice(["0.8", "1", "1.3"])))
+              # synthwave sun
+              p.append('<circle cx="450" cy="190" r="88" fill="url(#sun)" opacity=".95"/>')
+              for i, hh in enumerate([3, 4, 5, 7, 9]):
+                  p.append('<rect x="350" y="%d" width="200" height="%d" fill="#1a0638"/>' % (186 + i * 14, hh))
+
+              # ground grid (faint)
+              p.append('<rect x="0" y="%d" width="%d" height="%d" fill="url(#street)"/>' % (GY, W, H - GY))
+              p.append('<line x1="0" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="2" filter="url(#glow)"/>' % (GY + 2, W, GY + 2, PINK))
+
+              # the city: back row first
+              for row in range(6, -1, -1):
+                  for col in range(cols):
+                      c = weeks[col][row]
+                      if c is None:
+                          continue
+                      X = x0 + col * step + row * 6
+                      Y = GY - row * 6
+                      lv = level(c, mx)
+                      if lv == 0:
+                          p.append('<polygon points="%d,%d %d,%d %d,%d %d,%d" fill="#1a0b33" stroke="#2e1457" stroke-width=".6"/>'
+                                   % (X, Y - 2, X + 12, Y - 2, X + 17, Y - 7, X + 5, Y - 7))
+                          continue
+                      f, s, t = PALETTE[lv]
+                      h = int(6 + 74 * (c / float(mx)) ** 0.7)
+                      p.append('<polygon points="%d,%d %d,%d %d,%d %d,%d" fill="%s"/>' % (X, Y, X + 12, Y, X + 12, Y - h, X, Y - h, f))
+                      p.append('<polygon points="%d,%d %d,%d %d,%d %d,%d" fill="%s"/>' % (X + 12, Y, X + 17, Y - 5, X + 17, Y - 5 - h, X + 12, Y - h, s))
+                      top = "%d,%d %d,%d %d,%d %d,%d" % (X, Y - h, X + 12, Y - h, X + 17, Y - h - 5, X + 5, Y - h - 5)
+                      flt = ' filter="url(#soft)"' if lv >= 3 else ""
+                      p.append('<polygon points="%s" fill="%s" stroke="%s" stroke-width=".8"%s/>' % (top, t, t, flt))
+                      p.append('<polygon class="wave" style="animation-delay:%.2fs" points="%s" fill="#fff"/>' % (col * 0.11, top))
+                      if lv >= 2 and h >= 16:
+                          for k in range(min(5, int((h - 6) // 9))):
+                              for dx in (2, 7):
+                                  if rng.random() < .6:
+                                      wc = rng.choice([YEL, "#ffffff", CYAN])
+                                      cls = ""
+                                      if rng.random() < .35:
+                                          cls = ' class="win" style="animation-delay:-%.1fs"' % (rng.random() * 6)
+                                      p.append('<rect%s x="%d" y="%d" width="3" height="4" fill="%s" opacity=".85"/>' % (cls, X + dx, Y - 9 - k * 9, wc))
+
+              # scanning beam synced with the wave
+              p.append('<g class="beam"><rect x="%d" y="110" width="40" height="190" fill="url(#beamg)"/>'
+                       '<line x1="%d" y1="110" x2="%d" y2="300" stroke="%s" stroke-width="2" filter="url(#soft)"/></g>' % (x0 - 40, x0, x0, CYAN))
+
+              # flying cars
+              for cls, y, col in (("c1", 52, PINK), ("c2", 84, CYAN), ("c3", 120, YEL)):
+                  p.append('<g class="%s"><g transform="translate(0,%d)" filter="url(#soft)"><rect x="-40" y="2" width="40" height="2" fill="url(#trail)"/>'
+                           '<path d="M0 4 L26 4 L22 0 L8 0 Z" fill="%s"/><circle cx="26" cy="3" r="2" fill="#fff"/></g></g>' % (cls, y, col))
+              # rain
+              for _ in range(60):
+                  x, y = rng.randint(0, W + 30), rng.randint(-20, H)
+                  p.append('<line class="rain" style="animation-delay:-%.2fs;animation-duration:%.2fs" x1="%d" y1="%d" x2="%d" y2="%d" '
+                           'stroke="#9fe8ff" stroke-width="1" opacity=".3"/>' % (rng.random(), 0.7 + rng.random() * 0.6, x, y, x - 2, y + 14))
+
+              # HUD
+              now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+              user = USER or "user"
+              p.append('<g font-family="%s" font-weight="bold" text-anchor="middle" filter="url(#glow)">'
+                       '<text class="flick" x="450" y="46" font-size="30" letter-spacing="7" fill="#ffe3ef" stroke="%s" stroke-width="1">CONTRIBUTION CITY</text></g>' % (FONT, PINK))
+              p.append('<g font-family="%s" font-size="13" filter="url(#soft)">'
+                       '<text x="450" y="68" text-anchor="middle" fill="%s" letter-spacing="3">&gt; @%s // LIVE DATA FEED<tspan class="blink">_</tspan></text>'
+                       '<text x="16" y="22" fill="%s">LAST SYNC: %s</text>'
+                       '<text class="pulse" x="884" y="22" text-anchor="end" fill="%s">● SYS.ONLINE</text>'
+                       '<text x="16" y="324" fill="%s" letter-spacing="2">TOTAL %d  //  BEST STREAK %dD  //  PEAK %d/DAY</text></g>'
+                       % (FONT, CYAN, user, PINK, now, GRN, CYAN, total, best, mx))
+              # legend
+              lx = 700
+              p.append('<g font-family="%s" font-size="11" fill="%s"><text x="%d" y="324" text-anchor="end">LESS</text>' % (FONT, CYAN, lx - 4))
+              for i, colr in enumerate(["#1a0b33", PALETTE[1][2], PALETTE[2][2], PALETTE[3][2], PALETTE[4][2]]):
+                  p.append('<rect x="%d" y="316" width="10" height="10" fill="%s"/>' % (lx + i * 14, colr))
+              p.append('<text x="%d" y="324">MORE</text></g>' % (lx + 5 * 14 + 4))
+              p.append('<rect width="%d" height="%d" fill="url(#scan)"/><rect width="%d" height="%d" fill="url(#vig)"/></svg>' % (W, H, W, H))
+              return "".join(p)
+
+
+          def main():
+              weeks = get_weeks()
+              svg = build(weeks)
+              os.makedirs("dist", exist_ok=True)
+              for name in ("github-snake-dark.svg", "github-snake.svg"):
+                  with open(os.path.join("dist", name), "w", encoding="utf-8") as fh:
+                      fh.write(svg)
+              print("OK: %d weeks, %d bytes" % (len(weeks), len(svg)))
+
+
+          if __name__ == "__main__":
+              main()
+          PY
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
