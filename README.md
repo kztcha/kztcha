@@ -1,62 +1,63 @@
-<!-- Replace every "USERNAME" with your real GitHub username so the stats cards work -->
+<!--
+  CYBERPUNK PROFILE
+  Upload the "assets" folder to the root of this repo (same level as README.md).
+-->
 
-<!-- ═══════════════ HEADER (deep purple) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:2c5364,100:6a11cb&height=260&section=header&text=Léa%20Moreau&fontSize=68&fontColor=ffffff&animation=twinkling&fontAlignY=36&desc=MSc%20Student%20in%20Artificial%20Intelligence%20%26%20Data%20Science&descSize=20&descAlignY=58" alt="Header banner" />
+<!-- ═══════════════ HEADER ═══════════════ -->
+<img width="100%" src="assets/header.svg" alt="Léa Moreau — cyberpunk city header" />
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="40" alt="Waving hand" />
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=2500&pause=800&color=05D9E8&center=true&vCenter=true&width=760&height=45&lines=>+initializing+netrunner+profile...;>+Hello,+world.+I'm+Léa+👾;>+MSc+student+%7C+AI+%26+Data+Science+🧠;>+turning+messy+data+into+neon+insights+⚡)](https://git.io/typing-svg)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=800&color=A78BFA&center=true&vCenter=true&width=720&height=45&lines=Hi+there!+I'm+Léa+👋;Master's+student+%7C+AI+%26+Data+Science+🧠;I+turn+messy+data+into+useful+insights+📊;Open-source+enthusiast+%26+eternal+learner+🚀)](https://git.io/typing-svg)
-
-<img src="https://komarev.com/ghpvc/?username=USERNAME&label=Profile%20views&color=6a11cb&style=for-the-badge" alt="Profile views" />
-<img src="https://img.shields.io/badge/Open%20to-Internships%20%26%20Collabs-success?style=for-the-badge&logo=handshake&logoColor=white" alt="Open to work" />
+<img src="https://komarev.com/ghpvc/?username=kztcha&label=PLAYERS%20ONLINE&color=ff2a6d&labelColor=0a0014&style=for-the-badge" alt="Profile views" />
+<img src="https://img.shields.io/badge/STATUS-OPEN_TO_WORK-39ff14?style=for-the-badge&labelColor=0a0014&logo=gnometerminal&logoColor=39ff14" alt="Open to work" />
+<img src="https://img.shields.io/badge/LOCATION-LYON_//_2077-05d9e8?style=for-the-badge&labelColor=0a0014" alt="Location" />
 
 </div>
 
-<br/>
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<!-- ═══════════════ ABOUT (teal / green) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:11998e,100:38ef7d&height=100&section=header&text=👩‍🎓%20About%20Me&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=52" alt="About Me" />
+<!-- ═══════════════ ABOUT (pink) ═══════════════ -->
+<img width="100%" src="assets/about.svg" alt="About Me" />
 
 <table>
 <tr>
 <td width="60%">
 
 ```yaml
+> whoami
 name:        Léa Moreau
-status:      MSc 2nd year — AI & Data Science 🎓
-university:  Université de Lumière (fictional)
-location:    Lyon, France 🇫🇷
+class:       Netrunner (MSc 2nd year) 🎓
+academy:     Université de Lumière (fictional)
+sector:      Lyon, France 🇫🇷
 languages:   French 🇫🇷 · English 🇬🇧 · Spanish 🇪🇸
-fun_fact:    I train neural nets while my coffee brews ☕
+power_source: coffee ☕ (critical dependency)
 ```
 
 </td>
 <td width="40%" align="center">
 
-<img src="https://api.dicebear.com/7.x/adventurer/svg?seed=LeaMoreau&backgroundColor=b6e3f4,c0aede,d1d4f9" width="180" alt="Avatar" />
+<img src="https://api.dicebear.com/7.x/adventurer/svg?seed=LeaMoreau&backgroundColor=2b0a4a,5a0b5e" width="180" alt="Avatar" />
 
 </td>
 </tr>
 </table>
 
-- 🔭 Currently working on my **master's thesis**: *Explainable AI for medical image classification*
-- 🌱 Learning **MLOps**, **Rust** and **Graph Neural Networks**
-- 🤝 Looking to collaborate on **open-source ML projects**
-- 💬 Ask me about **Python, data visualization, or surviving thesis season**
-- ⚡ Fun fact: I once debugged a model for 6 hours… it was a typo in a CSV 🙃
+- 🔭 **Current mission:** master's thesis on *Explainable AI for medical image classification*
+- 🌱 **Installing:** MLOps, Rust and Graph Neural Networks
+- 🤝 **Seeking:** open-source ML crews to collaborate with
+- 💬 **Ask me about:** Python, data visualization, or surviving thesis season
+- ⚡ **Known bug:** once spent 6 hours debugging a model… it was a typo in a CSV 🙃
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:11998e,100:38ef7d&height=6&section=footer" alt="divider" />
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<br/>
-
-<!-- ═══════════════ TECH STACK (violet / blue) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:4776e6,100:8e54e9&height=100&section=header&text=🛠️%20Tech%20Stack&fontSize=38&fontColor=ffffff&animation=scaleIn&fontAlignY=52" alt="Tech Stack" />
+<!-- ═══════════════ TECH STACK (cyan) ═══════════════ -->
+<img width="100%" src="assets/stack.svg" alt="Tech Stack" />
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3000&pause=500&color=8E54E9&center=true&vCenter=true&width=500&lines=Languages+%7C+AI+%7C+Web+%7C+Cloud" alt="Stack typing" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=3000&pause=500&color=05D9E8&center=true&vCenter=true&width=520&lines=>+loading+modules...;>+languages+%7C+ai+%7C+web+%7C+cloud;>+all+systems+nominal" alt="Stack typing" />
 
 ### 💻 Languages
 <img src="https://skillicons.dev/icons?i=python,r,cpp,rust,js,ts,bash,sql&theme=dark" alt="Languages" />
@@ -72,108 +73,103 @@ fun_fact:    I train neural nets while my coffee brews ☕
 
 </div>
 
-### 📈 Skill Levels
+### ⚙️ Power Levels
 
 | Skill                     | Level |
 | ------------------------- | ----- |
-| 🐍 **Python**             | ![](https://geps.dev/progress/92?dangerColor=8e54e9&warningColor=8e54e9&successColor=8e54e9) |
-| 🔥 **PyTorch**            | ![](https://geps.dev/progress/85?dangerColor=4776e6&warningColor=4776e6&successColor=4776e6) |
-| 📊 **Data Visualization** | ![](https://geps.dev/progress/88?dangerColor=11998e&warningColor=11998e&successColor=11998e) |
-| 🗄️ **SQL**                | ![](https://geps.dev/progress/80?dangerColor=f7971e&warningColor=f7971e&successColor=f7971e) |
-| 🐳 **Docker / MLOps**     | ![](https://geps.dev/progress/70?dangerColor=ee0979&warningColor=ee0979&successColor=ee0979) |
-| 🦀 **Rust**               | ![](https://geps.dev/progress/45?dangerColor=ff6a00&warningColor=ff6a00&successColor=ff6a00) |
+| 🐍 **Python**             | ![](https://geps.dev/progress/92?dangerColor=ff2a6d&warningColor=ff2a6d&successColor=ff2a6d) |
+| 🔥 **PyTorch**            | ![](https://geps.dev/progress/85?dangerColor=05d9e8&warningColor=05d9e8&successColor=05d9e8) |
+| 📊 **Data Visualization** | ![](https://geps.dev/progress/88?dangerColor=f9f002&warningColor=f9f002&successColor=f9f002) |
+| 🗄️ **SQL**                | ![](https://geps.dev/progress/80?dangerColor=39ff14&warningColor=39ff14&successColor=39ff14) |
+| 🐳 **Docker / MLOps**     | ![](https://geps.dev/progress/70?dangerColor=b026ff&warningColor=b026ff&successColor=b026ff) |
+| 🦀 **Rust**               | ![](https://geps.dev/progress/45?dangerColor=ff9e00&warningColor=ff9e00&successColor=ff9e00) |
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:4776e6,100:8e54e9&height=6&section=footer" alt="divider" />
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<br/>
-
-<!-- ═══════════════ PROJECTS (orange / pink) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:f7971e,100:ee0979&height=100&section=header&text=🚀%20Featured%20Projects&fontSize=38&fontColor=ffffff&animation=blinking&fontAlignY=52" alt="Featured Projects" />
+<!-- ═══════════════ PROJECTS (yellow) ═══════════════ -->
+<img width="100%" src="assets/projects.svg" alt="Projects" />
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🩻 [MedScan-XAI](https://github.com/USERNAME)
+### 🩻 [MedScan-XAI](https://github.com/kztcha)
 Explainable deep learning for chest X-ray classification using Grad-CAM and SHAP.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![Status](https://img.shields.io/badge/status-in%20progress-yellow?style=flat-square)
+![Python](https://img.shields.io/badge/Python-0a0014?style=flat-square&logo=python&logoColor=05d9e8&labelColor=0a0014)
+![PyTorch](https://img.shields.io/badge/PyTorch-0a0014?style=flat-square&logo=pytorch&logoColor=ff2a6d)
+![Status](https://img.shields.io/badge/status-in_progress-f9f002?style=flat-square&labelColor=0a0014)
 
 </td>
 <td width="50%" valign="top">
 
-### 🌍 [ClimateLens](https://github.com/USERNAME)
+### 🌍 [ClimateLens](https://github.com/kztcha)
 Interactive dashboard visualizing 50 years of global temperature data.
 
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![D3.js](https://img.shields.io/badge/D3.js-F9A03C?style=flat-square&logo=d3dotjs&logoColor=white)
-![Status](https://img.shields.io/badge/status-completed-brightgreen?style=flat-square)
+![React](https://img.shields.io/badge/React-0a0014?style=flat-square&logo=react&logoColor=05d9e8)
+![D3.js](https://img.shields.io/badge/D3.js-0a0014?style=flat-square&logo=d3dotjs&logoColor=ff9e00)
+![Status](https://img.shields.io/badge/status-completed-39ff14?style=flat-square&labelColor=0a0014)
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 💬 [StudyBuddy-Bot](https://github.com/USERNAME)
+### 💬 [StudyBuddy-Bot](https://github.com/kztcha)
 An NLP chatbot that generates flashcards and quizzes from lecture notes.
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Transformers](https://img.shields.io/badge/🤗%20Transformers-FFD21E?style=flat-square&logoColor=black)
-![Status](https://img.shields.io/badge/status-completed-brightgreen?style=flat-square)
+![FastAPI](https://img.shields.io/badge/FastAPI-0a0014?style=flat-square&logo=fastapi&logoColor=39ff14)
+![Transformers](https://img.shields.io/badge/🤗_Transformers-0a0014?style=flat-square)
+![Status](https://img.shields.io/badge/status-completed-39ff14?style=flat-square&labelColor=0a0014)
 
 </td>
 <td width="50%" valign="top">
 
-### 🕸️ [GraphWalker](https://github.com/USERNAME)
+### 🕸️ [GraphWalker](https://github.com/kztcha)
 Experiments with Graph Neural Networks for recommendation systems.
 
-![PyTorch Geometric](https://img.shields.io/badge/PyG-3C2179?style=flat-square&logo=pytorch&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![Status](https://img.shields.io/badge/status-experimental-orange?style=flat-square)
+![PyG](https://img.shields.io/badge/PyG-0a0014?style=flat-square&logo=pytorch&logoColor=b026ff)
+![Rust](https://img.shields.io/badge/Rust-0a0014?style=flat-square&logo=rust&logoColor=ff9e00)
+![Status](https://img.shields.io/badge/status-experimental-ff2a6d?style=flat-square&labelColor=0a0014)
 
 </td>
 </tr>
 </table>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:f7971e,100:ee0979&height=6&section=footer" alt="divider" />
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<br/>
-
-<!-- ═══════════════ STATS (green / cyan) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:00b09b,100:96c93d&height=100&section=header&text=📊%20GitHub%20Stats&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlignY=52" alt="GitHub Stats" />
+<!-- ═══════════════ STATS (green) ═══════════════ -->
+<img width="100%" src="assets/stats.svg" alt="GitHub Stats" />
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&theme=synthwave&hide_border=true&count_private=true" alt="GitHub stats" />
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=synthwave&hide_border=true" alt="Top languages" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=kztcha&show_icons=true&count_private=true&bg_color=0a0014&title_color=05d9e8&text_color=d1f7ff&icon_color=ff2a6d&ring_color=39ff14&border_color=ff2a6d" alt="GitHub stats" />
+<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kztcha&layout=compact&bg_color=0a0014&title_color=05d9e8&text_color=d1f7ff&border_color=b026ff" alt="Top languages" />
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=USERNAME&theme=synthwave&hide_border=true" alt="Streak stats" />
+<img src="https://streak-stats.demolab.com?user=kztcha&background=0a0014&ring=ff2a6d&fire=f9f002&currStreakNum=05d9e8&sideNums=05d9e8&currStreakLabel=ff2a6d&sideLabels=ff2a6d&dates=d1f7ff&border=b026ff" alt="Streak stats" />
 
 <br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=USERNAME&theme=react-dark&hide_border=true&area=true&color=96c93d&line=00b09b&point=ffffff" alt="Activity graph" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=kztcha&bg_color=0a0014&color=ff2a6d&line=05d9e8&point=f9f002&area=true&area_color=ff2a6d&title_color=05d9e8&hide_border=true" alt="Activity graph" />
 
 <br/>
 
-<!-- Animated contribution snake — needs the GitHub Action in snake.yml (see notes) -->
+<!-- Animated contribution snake: needs the GitHub Action from snake.yml -->
 <img src="https://raw.githubusercontent.com/kztcha/kztcha/output/github-snake-dark.svg" alt="Contribution snake" />
 
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=6&section=footer" alt="divider" />
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<br/>
-
-<!-- ═══════════════ ACHIEVEMENTS (gold / amber) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:f5af19,100:f12711&height=100&section=header&text=🏆%20Achievements%20%26%20Education&fontSize=36&fontColor=ffffff&animation=fadeIn&fontAlignY=52" alt="Achievements" />
+<!-- ═══════════════ ACHIEVEMENTS (orange) ═══════════════ -->
+<img width="100%" src="assets/achievements.svg" alt="Achievements" />
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'background':'#0a0014','primaryColor':'#1b0636','primaryTextColor':'#d1f7ff','lineColor':'#05d9e8','cScale0':'#ff2a6d','cScale1':'#05d9e8','cScale2':'#f9f002','cScale3':'#b026ff','cScale4':'#39ff14','cScaleLabel0':'#0a0014','cScaleLabel1':'#0a0014','cScaleLabel2':'#0a0014','cScaleLabel3':'#ffffff','cScaleLabel4':'#0a0014'}}}%%
 timeline
-    title My Academic Journey
+    title Mission Log
     2019 : Started Bachelor in Computer Science
     2022 : Graduated with honors 🎓
          : Internship at a health-tech startup
@@ -185,59 +181,53 @@ timeline
 
 <div align="center">
 
-![Hackathon](https://img.shields.io/badge/🥇_Lyon_AI_Week-1st_Place-gold?style=for-the-badge)
-![Kaggle](https://img.shields.io/badge/Kaggle-Expert-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)
-![Cert](https://img.shields.io/badge/AWS-Cloud_Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Cert](https://img.shields.io/badge/TensorFlow-Developer_Certificate-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Hackathon](https://img.shields.io/badge/🥇_LYON_AI_WEEK-1ST_PLACE-f9f002?style=for-the-badge&labelColor=0a0014)
+![Kaggle](https://img.shields.io/badge/KAGGLE-EXPERT-05d9e8?style=for-the-badge&logo=kaggle&logoColor=05d9e8&labelColor=0a0014)
+![AWS](https://img.shields.io/badge/AWS-CLOUD_PRACTITIONER-ff9e00?style=for-the-badge&logo=amazonaws&logoColor=ff9e00&labelColor=0a0014)
+![TensorFlow](https://img.shields.io/badge/TENSORFLOW-DEVELOPER_CERT-ff2a6d?style=for-the-badge&logo=tensorflow&logoColor=ff2a6d&labelColor=0a0014)
 
 <br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=USERNAME&theme=flat&no-frame=true&row=1&column=6" alt="GitHub trophies" />
+<img src="https://github-profile-trophy.vercel.app/?username=kztcha&theme=radical&no-frame=true&no-bg=true&row=1&column=6" alt="GitHub trophies" />
 
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:f5af19,100:f12711&height=6&section=footer" alt="divider" />
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<br/>
-
-<!-- ═══════════════ LEARNING (red / magenta) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:ff416c,100:ff4b2b&height=100&section=header&text=📚%20Currently%20Learning&fontSize=38&fontColor=ffffff&animation=scaleIn&fontAlignY=52" alt="Currently Learning" />
+<!-- ═══════════════ LEARNING (purple) ═══════════════ -->
+<img width="100%" src="assets/learning.svg" alt="Currently Learning" />
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=2000&pause=600&color=FF416C&center=true&vCenter=true&width=620&lines=Reading+papers+on+Graph+Neural+Networks...;Fine-tuning+my+first+LLM...;Containerizing+everything+with+Docker...;Fighting+the+Rust+borrow+checker+🦀" alt="Learning typing" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=2000&pause=600&color=B026FF&center=true&vCenter=true&width=640&lines=>+reading+papers+on+Graph+Neural+Networks...;>+fine-tuning+my+first+LLM...;>+containerizing+everything+with+Docker...;>+fighting+the+Rust+borrow+checker+🦀" alt="Learning typing" />
 
 <br/>
 
-![MLOps](https://img.shields.io/badge/MLOps-in%20progress-6a11cb?style=for-the-badge&logo=mlflow&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-learning-orange?style=for-the-badge&logo=rust&logoColor=white)
-![GNN](https://img.shields.io/badge/Graph%20Neural%20Nets-exploring-blue?style=for-the-badge)
-![LLMs](https://img.shields.io/badge/LLM%20Fine--tuning-experimenting-green?style=for-the-badge)
+![MLOps](https://img.shields.io/badge/MLOps-UPLOADING-b026ff?style=for-the-badge&logo=mlflow&logoColor=b026ff&labelColor=0a0014)
+![Rust](https://img.shields.io/badge/RUST-COMPILING-ff9e00?style=for-the-badge&logo=rust&logoColor=ff9e00&labelColor=0a0014)
+![GNN](https://img.shields.io/badge/GRAPH_NEURAL_NETS-EXPLORING-05d9e8?style=for-the-badge&labelColor=0a0014)
+![LLMs](https://img.shields.io/badge/LLM_FINE--TUNING-TESTING-39ff14?style=for-the-badge&labelColor=0a0014)
 
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:ff416c,100:ff4b2b&height=6&section=footer" alt="divider" />
+<img width="100%" src="assets/divider.svg" alt="" />
 
-<br/>
-
-<!-- ═══════════════ CONTACT (ocean blue) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&color=0:2193b0,100:6dd5ed&height=100&section=header&text=📫%20Let's%20Connect&fontSize=38&fontColor=ffffff&animation=blinking&fontAlignY=52" alt="Let's Connect" />
+<!-- ═══════════════ CONTACT (blue) ═══════════════ -->
+<img width="100%" src="assets/connect.svg" alt="Connect" />
 
 <div align="center">
 
-<a href="https://linkedin.com/in/USERNAME"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="mailto:lea.moreau@example.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-<a href="https://kaggle.com/USERNAME"><img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle" /></a>
-<a href="https://twitter.com/USERNAME"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
-<a href="https://USERNAME.github.io"><img src="https://img.shields.io/badge/Portfolio-6a11cb?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
+<a href="https://linkedin.com/in/kztcha"><img src="https://img.shields.io/badge/LINKEDIN-0a0014?style=for-the-badge&logo=linkedin&logoColor=2d8cff&labelColor=0a0014&color=2d8cff" alt="LinkedIn" /></a>
+<a href="mailto:lea.moreau@example.com"><img src="https://img.shields.io/badge/EMAIL-0a0014?style=for-the-badge&logo=gmail&logoColor=ff2a6d&labelColor=0a0014&color=ff2a6d" alt="Email" /></a>
+<a href="https://kaggle.com/kztcha"><img src="https://img.shields.io/badge/KAGGLE-0a0014?style=for-the-badge&logo=kaggle&logoColor=05d9e8&labelColor=0a0014&color=05d9e8" alt="Kaggle" /></a>
+<a href="https://twitter.com/kztcha"><img src="https://img.shields.io/badge/X-0a0014?style=for-the-badge&logo=x&logoColor=ffffff&labelColor=0a0014&color=ffffff" alt="X" /></a>
+<a href="https://kztcha.github.io"><img src="https://img.shields.io/badge/PORTFOLIO-0a0014?style=for-the-badge&logo=googlechrome&logoColor=b026ff&labelColor=0a0014&color=b026ff" alt="Portfolio" /></a>
 
 <br/><br/>
 
 > 💡 *"Data is just a story waiting for someone to listen."*
 
-<img src="https://readme-quotes.vercel.app/api?theme=radical&hide_border=true" alt="Random dev quote" />
-
 </div>
 
-<!-- ═══════════════ FOOTER (purple, matches header) ═══════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:6a11cb,50:2c5364,100:0f2027&height=160&section=footer&text=Thanks%20for%20visiting!&fontSize=28&fontColor=ffffff&animation=twinkling&fontAlignY=70" alt="Footer" />
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<img width="100%" src="assets/footer.svg" alt="Thanks for visiting" />
