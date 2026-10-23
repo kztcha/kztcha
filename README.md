@@ -1,6 +1,7 @@
 <!--
-  CYBERPUNK PROFILE
-  Upload the "assets" folder to the root of this repo (same level as README.md).
+  CYBERPUNK PROFILE for @kztcha
+  Needed in this repo: README.md, the "assets" folder (same level as README.md),
+  and .github/workflows/snake.yml (builds the animated contribution city).
 -->
 
 <!-- ═══════════════ HEADER ═══════════════ -->
@@ -156,8 +157,9 @@ Experiments with Graph Neural Networks for recommendation systems.
 
 <br/>
 
-<!-- Animated contribution snake: needs the GitHub Action from snake.yml -->
-<img src="https://raw.githubusercontent.com/kztcha/kztcha/output/github-snake-dark.svg" alt="Contribution snake" />
+<!-- Animated neon contribution city: generated daily by the GitHub Action in snake.yml.
+     Bump the ?v= number to force GitHub to refresh its image cache. -->
+<img src="https://raw.githubusercontent.com/kztcha/kztcha/output/github-snake-dark.svg?v=2" alt="Neon contribution city" />
 
 </div>
 
